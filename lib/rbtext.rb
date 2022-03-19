@@ -6,7 +6,7 @@ require_relative "rbtext/ftext.rb"
 module RBText
   @ver_1 = 0
   @ver_2 = 0
-  @ver_3 = 4
+  @ver_3 = 5
 
   def version
     "#{@ver_1}.#{@ver_2}.#{@ver_3}"  

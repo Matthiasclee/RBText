@@ -15,4 +15,6 @@ Gem::Specification.new do |s|
     "lib/rbtext/ftext.rb",
   ]
   s.require_paths = ["lib"]
+  s.homepage = 'https://github.com/Matthiasclee/RBText'
+  s.license = 'AGPL-3.0'
 end
