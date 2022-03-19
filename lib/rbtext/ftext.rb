@@ -52,3 +52,9 @@ module RBText
   class Ft < RBText::Ftext
   end
 end
+
+class String
+  def to_ftext
+    RBText::Ftext.new self.to_s
+  end
+end
