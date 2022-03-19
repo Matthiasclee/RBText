@@ -16,15 +16,20 @@ module RBText
       print "\033[#{num.to_i}C"
     end
 
+    def go_to_pos(x, y)
+      print "\033[#{y};#{x}H"
+      print "\033[#{y};#{x}f"
+    end
+
     def beginning_of_line
       print "\r"
     end
 
-    module_function :up, :down, :left, :right, :beginning_of_line
+    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos
   end
 
   module Cr
     include RBText::Cursor
-    module_function :up, :down, :left, :right, :beginning_of_line
+    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos
   end
 end
