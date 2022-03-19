@@ -43,4 +43,9 @@ module RBText
 
     module_function :fg_color_codes, :bg_color_codes, :color
   end
+
+  module C
+    include RBText::Colors
+    module_function :fg_color_codes, :bg_color_codes, :color
+  end
 end

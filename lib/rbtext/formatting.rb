@@ -22,4 +22,9 @@ module RBText
 
     module_function :reset, :bold, :faint, :italic, :underline
   end
+
+  module F
+    include RBText::Formatting
+    module_function :reset, :bold, :faint, :italic, :underline
+  end
 end

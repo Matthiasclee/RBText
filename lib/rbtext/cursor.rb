@@ -22,4 +22,9 @@ module RBText
 
     module_function :up, :down, :left, :right, :beginning_of_line
   end
+
+  module Cr
+    include RBText::Cursor
+    module_function :up, :down, :left, :right, :beginning_of_line
+  end
 end

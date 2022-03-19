@@ -48,4 +48,7 @@ module RBText
       @original_text
     end
   end
+
+  class Ft < RBText::Ftext
+  end
 end

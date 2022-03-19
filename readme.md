@@ -98,3 +98,19 @@ You can create Ftext with `txt =RBText::Ftext.new("<ftext here>")`
 That object can be printed with `puts txt`
 You can get the original ftext with `txt.original_text`
 You can turn it into normal text with `txt.normal_text`
+
+### Short names
+RBText has abbreviated names for modules and classes to make them cleaner.
+```rb
+# Ftext
+R::Ft
+
+# Formatting
+R::F
+
+# Cursor
+R::Cr
+
+# Colors
+R::C
+```
