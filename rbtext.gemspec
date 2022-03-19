@@ -1,6 +1,8 @@
+require_relative "lib/rbtext.rb"
+
 Gem::Specification.new do |s|
   s.name        = 'rbtext'
-  s.version     = '0.0.1'
+  s.version     = RBText.version
   s.summary     = "RBText"
   s.description = "A gem for printing formatted text"
   s.authors     = ["Matthias Lee"]
