@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
     "lib/rbtext/cursor.rb",
     "lib/rbtext/formatting.rb",
     "lib/rbtext/ftext.rb",
+    "lib/rbtext/screen.rb",
   ]
   s.require_paths = ["lib"]
   s.homepage = 'https://github.com/Matthiasclee/RBText'

@@ -102,6 +102,16 @@ That object can be printed with `puts txt`
 You can get the original ftext with `txt.original_text`
 You can turn it into normal text with `txt.normal_text`
 
+### Screen
+There is a `RBText::Screen` module that lets you clear the screen and the current line.
+```rb
+# Clear whole screen
+RBText::Screen.clear
+
+# Clear current line
+RBText::Screen.clear_line
+```
+
 ### Short names
 RBText has abbreviated names for modules and classes to make them cleaner.
 ```rb
@@ -116,4 +126,7 @@ R::Cr
 
 # Colors
 R::C
+
+# Screen
+R::S
 ```
