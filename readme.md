@@ -32,6 +32,9 @@ RBText::Cursor.right
 
 # BEGINNING OF LINE
 RBText::Cursor.beginning_of_line
+
+# GO TO POS (x,y)
+RBText::Cursor.go_to_pos(4,9)
 ```
 
 ### Colored text
