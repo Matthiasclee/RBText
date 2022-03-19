@@ -10,6 +10,14 @@ puts R::Ft.new '_.f:bold._Bold!'
 
 puts R::Ft.new "_.f:faint._Thin!"
 
+print R::C.color :light_blue
+print R::C.color :green, type: :bg
+print R::F.italic
+print R::F.underline
+print R::F.bold
+
+puts "Every_.f:faint._thing".to_ftext
+
 
 puts
 puts "I was printed first"
