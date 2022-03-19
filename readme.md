@@ -93,3 +93,8 @@ inside of the `_. ._`, you can specify formatting options like this:
 # Clear options
 "_.f:reset._"
 ```
+
+You can create Ftext with `txt =RBText::Ftext.new("<ftext here>")`
+That object can be printed with `puts txt`
+You can get the original ftext with `txt.original_text`
+You can turn it into normal text with `txt.normal_text`
