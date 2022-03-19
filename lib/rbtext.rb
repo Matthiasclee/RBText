@@ -7,7 +7,7 @@ require_relative "rbtext/screen.rb"
 module RBText
   @ver_1 = 0
   @ver_2 = 0
-  @ver_3 = 5
+  @ver_3 = 6
 
   def version
     "#{@ver_1}.#{@ver_2}.#{@ver_3}"  
