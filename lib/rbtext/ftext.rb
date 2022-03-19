@@ -32,6 +32,8 @@ module RBText
           @text << x
         end 
       end
+
+      @text << RBText::Formatting.reset
     end
 
     def to_s
