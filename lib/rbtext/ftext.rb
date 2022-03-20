@@ -26,6 +26,10 @@ module RBText
               @text << RBText::Formatting.italic
             elsif x[1] == "underline"
               @text << RBText::Formatting.underline
+            elsif x[1] == "strikethrough"
+              @text << RBText::Formatting.strikethrough
+            elsif x[1] == "blinking"
+              @text << RBText::Formatting.blinking
             end
           end
         else

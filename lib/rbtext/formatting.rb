@@ -20,11 +20,19 @@ module RBText
       "\033[4m"
     end
 
-    module_function :reset, :bold, :faint, :italic, :underline
+    def blinking
+      "\033[5m"
+    end
+
+    def strikethrough
+      "\033[9m"
+    end
+
+      module_function :reset, :bold, :faint, :italic, :underline, :blinking, :strikethrough
   end
 
   module F
     include RBText::Formatting
-    module_function :reset, :bold, :faint, :italic, :underline
+    module_function :reset, :bold, :faint, :italic, :underline, :blinking, :strikethrough
   end
 end
