@@ -85,6 +85,10 @@ You can clear all formatting with
 ```rb
 RBText::Formatting.reset
 ```
+or clear just one formatting option with
+```rb
+RBText::Formatting.reset(R::F.<option here>)
+```
 
 ### Ftext
 Ftext, or formatted text is an RBText class that allows you to write a string with formatting options inside of a `_. ._`.
