@@ -31,6 +31,20 @@ module RBText
             elsif x[1] == "blinking"
               @text << RBText::Formatting.blinking
             end
+          elsif x[0] == "rf"
+            if x[1] == "bold"
+              @text << RBText::Formatting.reset(R::F.bold)
+            elsif x[1] == "faint"
+              @text << RBText::Formatting.reset(R::F.faint)
+            elsif x[1] == "italic"
+              @text << RBText::Formatting.reset(R::F.italic)
+            elsif x[1] == "underline"
+              @text << RBText::Formatting.reset(R::F.underline)
+            elsif x[1] == "strikethrough"
+              @text << RBText::Formatting.reset(R::F.strikethrough)
+            elsif x[1] == "blinking"
+              @text << RBText::Formatting.reset(R::F.blinking)
+            end
           end
         else
           @text << x
