@@ -53,6 +53,15 @@ You can also get a background color by adding `type: :bg` like this:
 RBText::Colors.color :blue, type: :bg
 ```
 
+You can use colors from the 256 color table (below) like this:
+```rb
+"#{RBText::Colors.num_color 138}"
+
+# Or for a backround color:
+"#{RBText::Colors.num_color 138, type: :bg}"
+```
+![256 Color table](https://user-images.githubusercontent.com/995050/47952855-ecb12480-df75-11e8-89d4-ac26c50e80b9.png)
+
 To clear all colors do
 ```rb
 RBText::Formatting.reset
@@ -102,6 +111,12 @@ inside of the `_. ._`, you can specify formatting options like this:
 
 # Background blue
 "_.cb:blue._"
+
+# 137
+"_.cn:137._"
+
+# Background 137
+"_.cbn:137._"
 
 # Clear options
 "_.f:reset._"
