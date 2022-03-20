@@ -73,6 +73,12 @@ RBText::Formatting.italic
 
 # Faint/light text
 RBText::Formatting.faint
+
+# Blinking text
+RBText::Formatting.blinking
+
+# Strikethrough text
+RBText::Formatting.strikethrough
 ```
 
 You can clear all formatting with
