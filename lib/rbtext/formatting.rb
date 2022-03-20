@@ -1,7 +1,13 @@
 module RBText
   module Formatting
-    def reset
-      "\033[0m"
+    def reset(f_opt = nil)
+      if f_opt
+        "\033[#{
+          f_opt =~ /^\033\[(1|2)m$/ ? "\033[22m" : "\033[2#{f_opt.gsub(/[^0-9]/, "")}m"
+        }"
+      else
+        "\033[0m"
+      end
     end
 
     def bold
