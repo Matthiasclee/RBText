@@ -17,7 +17,8 @@ module RBText
         light_blue: "94",
         light_magenta: "95",
         light_cyan: "96",
-        white: "97"
+        white: "97",
+        reset: "39"
       }
     end
 
