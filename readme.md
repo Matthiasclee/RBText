@@ -1,5 +1,5 @@
 # RBText
-#### RBText is a gem that allows you to print formatted text, and move the cursor easily.
+#### RBText is a gem that allows you to format, color, and manipulate terminal output.
 
 ## Installation
 Get it from RubyGems:
