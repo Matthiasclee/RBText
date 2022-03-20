@@ -15,6 +15,10 @@ module RBText
             @text << RBText::Colors.color(x[1].to_sym)
           elsif x[0] == "cb"
             @text << RBText::Colors.color(x[1].to_sym, type: :bg)
+          elsif x[0] == "cfn" || x[0] == "cn"
+            @text << RBText::Colors.num_color(x[1])
+          elsif x[0] == "cbn"
+            @text << RBText::Colors.num_color(x[1], type: :bg)
           elsif x[0] == "f"
             if x[1] == "reset"
               @text << RBText::Formatting.reset

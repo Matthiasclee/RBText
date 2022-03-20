@@ -42,11 +42,15 @@ module RBText
       return "\033[#{color_code}m"
     end
 
-    module_function :fg_color_codes, :bg_color_codes, :color
+    def num_color(num, type: :fg)
+      return "\033[#{type == :fg ? "38" : "48"};5;#{num}m"
+    end
+
+    module_function :fg_color_codes, :bg_color_codes, :color, :num_color
   end
 
   module C
     include RBText::Colors
-    module_function :fg_color_codes, :bg_color_codes, :color
+    module_function :fg_color_codes, :bg_color_codes, :color, :num_color
   end
 end
