@@ -7,8 +7,8 @@ require_relative "rbtext/screen.rb"
 module RBText
   @ver_1 = 0
   @ver_2 = 0
-  @ver_3 = 7
-  @ver_4 = ""
+  @ver_3 = 8
+  @ver_4 = "dev"
 
   def version
     "#{@ver_1}.#{@ver_2}.#{@ver_3}#{".#{@ver_4}" if @ver_4.length > 1}"
