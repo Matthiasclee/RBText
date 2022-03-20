@@ -64,7 +64,10 @@ You can use colors from the 256 color table (below) like this:
 
 To clear all colors do
 ```rb
-RBText::Formatting.reset
+RBText::Colors.color :reset
+
+# Reset background colors
+RBText::Colors.color :reset, type: :bg
 ```
 
 ### Formatting
