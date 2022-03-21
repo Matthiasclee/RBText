@@ -69,6 +69,14 @@ module RBText
     def original_text
       @original_text
     end
+
+    def +(str)
+      self.to_s + str
+    end
+
+    def [](num)
+      self.to_s[num]
+    end
   end
 
   class Ft < RBText::Ftext
