@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
     "lib/rbtext/ftext.rb",
     "lib/rbtext/screen.rb",
   ]
+  s.add_runtime_dependency "io", '~> 0.0.1'
   s.require_paths = ["lib"]
   s.homepage = 'https://github.com/Matthiasclee/RBText'
   s.license = 'AGPL-3.0'

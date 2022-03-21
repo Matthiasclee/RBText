@@ -3,6 +3,7 @@ require_relative "rbtext/colors.rb"
 require_relative "rbtext/formatting.rb"
 require_relative "rbtext/ftext.rb"
 require_relative "rbtext/screen.rb"
+require "io/console"
 
 module RBText
   @ver_1 = 0
