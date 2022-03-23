@@ -16,7 +16,12 @@ module RBText
       print "\033[#{num.to_i}C"
     end
 
-    def go_to_pos(x, y)
+    def go_to_pos(x, y=nil)
+      if x.class == Array && !y
+        y = x[1]
+        x = x[0]
+      end
+
       print "\033[#{y};#{x}H"
       print "\033[#{y};#{x}f"
     end
