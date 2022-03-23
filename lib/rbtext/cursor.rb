@@ -21,15 +21,28 @@ module RBText
       print "\033[#{y};#{x}f"
     end
 
+    def pos
+      res = ''
+      $stdin.raw do |stdin|
+        $stdout << "\e[6n"
+        $stdout.flush
+        while (c = stdin.getc) != 'R'
+          res << c if c
+        end
+      end
+      m = res.match /(?<row>\d+);(?<column>\d+)/
+      return [Integer(m[:column]), Integer(m[:row])]
+    end
+
     def beginning_of_line
       print "\r"
     end
 
-    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos
+    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos, :pos
   end
 
   module Cr
     include RBText::Cursor
-    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos
+    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos, :pos
   end
 end
