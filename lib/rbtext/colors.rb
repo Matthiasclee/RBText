@@ -33,10 +33,14 @@ module RBText
     end
 
     def color(color, type: :fg)
+      return "\033[39m\033[49m" if type == :all && color == :reset
+
       if type == :fg
         color_code = self.fg_color_codes[color.to_sym]
       elsif type == :bg
         color_code = self.bg_color_codes[color.to_sym]
+      else
+        return nil
       end
 
       return "\033[#{color_code}m"
