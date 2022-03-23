@@ -150,6 +150,18 @@ RBText::Screen.clear
 RBText::Screen.clear_line
 ```
 
+You can also get the window size with `RBText::Screen`
+```rb
+# Size
+RBText::Screen.size # => [50, 100]
+
+# Width
+RBText::Screen.width # => 100
+
+# Height
+RBText::Screen.height # => 50
+```
+
 ### Short names
 RBText has abbreviated names for modules and classes to make them cleaner.
 ```rb
