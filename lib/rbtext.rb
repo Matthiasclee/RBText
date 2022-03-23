@@ -7,9 +7,9 @@ require "io/console"
 
 module RBText
   @ver_1 = 0
-  @ver_2 = 0
-  @ver_3 = 8
-  @ver_4 = "dev"
+  @ver_2 = 1
+  @ver_3 = 0
+  @ver_4 = ""
 
   def version
     "#{@ver_1}.#{@ver_2}.#{@ver_3}#{".#{@ver_4}" if @ver_4.length > 1}"
