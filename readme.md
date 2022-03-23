@@ -3,12 +3,18 @@
 
 ## Installation
 Get it from RubyGems:
-```
+```sh
 gem install rbtext
 ```
 
 or download the rbtext-x.x.x.gem file from the releases:
+```sh
+gem install rbtext-x.x.x.gem
 ```
+
+or build it yourself:
+```sh
+gem build rbtext.gemspec
 gem install rbtext-x.x.x.gem
 ```
 
