@@ -1,5 +1,15 @@
 module RBText
   module Cursor
+    @@methods = [
+      :up,
+      :down,
+      :left,
+      :right,
+      :beginning_of_line,
+      :go_to_pos,
+      :pos
+    ]
+
     def up(num=1)
       print "\033[#{num.to_i}A"
     end
@@ -43,11 +53,15 @@ module RBText
       print "\r"
     end
 
-    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos, :pos
+    @@methods.each do |method|
+      module_function method
+    end
   end
 
   module Cr
     include RBText::Cursor
-    module_function :up, :down, :left, :right, :beginning_of_line, :go_to_pos, :pos
+    @@methods.each do |method|
+      module_function method
+    end
   end
 end

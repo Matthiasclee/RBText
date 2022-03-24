@@ -1,5 +1,13 @@
 module RBText
   module Screen
+    @@methods = [
+      :clear,
+      :clear_line,
+      :size,
+      :height,
+      :width
+    ]
+
     def clear
       print "\033[2J"
     end
@@ -20,11 +28,15 @@ module RBText
       self.size[1]
     end
 
-    module_function :clear, :clear_line, :size, :height, :width
+    @@methods.each do |method|
+      module_function method
+    end
   end
 
   module S
     include RBText::Screen
-    module_function :clear, :clear_line, :size, :height, :width
+    @@methods.each do |method|
+      module_function method
+    end
   end
 end

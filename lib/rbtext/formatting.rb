@@ -1,5 +1,15 @@
 module RBText
   module Formatting
+    @@methods = [
+    :reset,
+    :bold,
+    :faint,
+    :italic, 
+    :underline, 
+    :blinking, 
+    :strikethrough
+    ]
+
     def reset(f_opt = nil)
       if f_opt
         "\033[#{
@@ -34,11 +44,16 @@ module RBText
       "\033[9m"
     end
 
-      module_function :reset, :bold, :faint, :italic, :underline, :blinking, :strikethrough
+    module_function 
+    @@methods.each do |method|
+      module_function method
+    end
   end
 
   module F
     include RBText::Formatting
-    module_function :reset, :bold, :faint, :italic, :underline, :blinking, :strikethrough
+    @@methods.each do |method|
+      module_function method
+    end
   end
 end

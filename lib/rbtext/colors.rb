@@ -1,5 +1,14 @@
 module RBText
   module Colors
+    @@methods = [
+      :fg_color_codes,
+      :bg_color_codes,
+      :color,
+      :num_color,
+      :set_color,
+      :set_num_color
+    ]
+
     def fg_color_codes
       {
         black: "30",
@@ -58,11 +67,16 @@ module RBText
       puts self.num_color(color, type: :fg)
     end
 
-    module_function :fg_color_codes, :bg_color_codes, :color, :num_color, :set_color, :set_num_color
+    @@methods.each do |method|
+      module_function method
+    end
   end
 
   module C
     include RBText::Colors
-    module_function :fg_color_codes, :bg_color_codes, :color, :num_color, :set_color, :set_num_color
+
+    @@methods.each do |method|
+      module_function method
+    end
   end
 end
