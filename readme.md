@@ -159,6 +159,8 @@ asd.txt # yellow
 example.rb # green
 ```
 
+By default this adds a `_.f:reset._` to the beginning of each line. This can be removed with the `--noreset` flag.
+
 ### Screen
 There is a `RBText::Screen` module that lets you clear the screen and the current line.
 ```rb
