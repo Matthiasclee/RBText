@@ -45,6 +45,8 @@ RBText::Cursor.go_to_pos(4,9)
 
 You can get the cursor position with `RBText::Cursor.pos`. It returns as `[x, y]`
 
+You can show and hide the cursor with `RBText::Cursor.show` and `RBText::Cursor.hide`
+
 ### Colored text
 You can color the text with the RBText::Colors.color function. This function jsut returns ANSI escape codes.
 
