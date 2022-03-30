@@ -18,13 +18,13 @@ else
     end
 
     (0..lines.length-1).each do |l|
-      txt << "#{"_.f:reset._" if ARGV[1] != "--noreset"}_.#{args[l]}._"+lines[l]
+      txt << "#{"_.f:reset._" if ARGV[1] != "--noreset"}_.#{args[l]}._"+lines[l].gsub("_", "\0004")
     end
 
     txt = txt.join
   else
-    txt = ARGF.readlines.join
+    txt = ARGF.readlines.join.gsub("_", "\0004")
   end
 end
 
-print R::Ft.new(txt)
+print R::Ft.new(txt).to_s.gsub("\0004", "_")
