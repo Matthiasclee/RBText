@@ -7,7 +7,9 @@ module RBText
       :right,
       :beginning_of_line,
       :go_to_pos,
-      :pos
+      :pos,
+      :show,
+      :hide
     ]
 
     def up(num=1)
@@ -51,6 +53,14 @@ module RBText
 
     def beginning_of_line
       print "\r"
+    end
+
+    def show
+      print "\033[?25h"
+    end
+
+    def hide
+      print "\033[?25l"
     end
 
     @@methods.each do |method|
