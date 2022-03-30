@@ -145,6 +145,20 @@ That object can be printed with `puts txt`
 You can get the original ftext with `txt.original_text`
 You can turn it into normal text with `txt.normal_text`
 
+Ftext can also be used as a command line utility.
+```sh
+$ ftext '_.c:yellow._asd'
+asd #Yellow
+
+$ ls | ftext 'c:yellow'
+asd.txt # yellow
+example.rb # yellow
+
+$ls | ftext 'c:yellow,c:green'
+asd.txt # yellow
+example.rb # green
+```
+
 ### Screen
 There is a `RBText::Screen` module that lets you clear the screen and the current line.
 ```rb
