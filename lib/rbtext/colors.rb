@@ -4,9 +4,7 @@ module RBText
       :fg_color_codes,
       :bg_color_codes,
       :color,
-      :num_color,
-      :set_color,
-      :set_num_color
+      :num_color
     ]
 
     def fg_color_codes
@@ -57,14 +55,6 @@ module RBText
 
     def num_color(num, type: :fg)
       return "\033[#{type == :fg ? "38" : "48"};5;#{num}m"
-    end
-
-    def set_color(color, type: :fg)
-      puts self.color(color, type: type)
-    end
-
-    def set_num_color(color, type: :fg)
-      puts self.num_color(color, type: :fg)
     end
 
     @@methods.each do |method|
