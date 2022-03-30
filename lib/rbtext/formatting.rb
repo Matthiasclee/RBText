@@ -10,38 +10,52 @@ module RBText
     :strikethrough
     ]
 
-    def reset(f_opt = nil)
+    def reset(f_opt = nil, mode: :str)
       if f_opt
-        "\033[#{
+        r="\033[#{
           f_opt =~ /^\033\[(1|2)m$/ ? "\033[22m" : "\033[2#{f_opt.gsub(/[^0-9]/, "")}m"
         }"
       else
-        "\033[0m"
+        r="\033[0m"
       end
+      return r if mode == :str
+      print r if mode == :set
     end
 
-    def bold
-      "\033[1m"
+    def bold(mode: :str)
+      r="\033[1m"
+      return r if mode == :str
+      print r if mode == :set
     end
 
-    def faint
-      "\033[2m"
+    def faint(mode: :str)
+      r="\033[2m"
+      return r if mode == :str
+      print r if mode == :set
     end
 
-    def italic
-      "\033[3m"
+    def italic(mode: :str)
+      r="\033[3m"
+      return r if mode == :str
+      print r if mode == :set
     end
 
-    def underline
-      "\033[4m"
+    def underline(mode: :str)
+      r="\033[4m"
+      return r if mode == :str
+      print r if mode == :set
     end
 
-    def blinking
-      "\033[5m"
+    def blinking(mode: :str)
+      r="\033[5m"
+      return r if mode == :str
+      print r if mode == :set
     end
 
-    def strikethrough
-      "\033[9m"
+    def strikethrough(mode: :str)
+      r="\033[9m"
+      return r if mode == :str
+      print r if mode == :set
     end
 
     module_function 

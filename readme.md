@@ -70,6 +70,8 @@ You can use colors from the 256 color table (below) like this:
 ```
 ![256 Color table](https://user-images.githubusercontent.com/995050/47952855-ecb12480-df75-11e8-89d4-ac26c50e80b9.png)
 
+By default the `color` and `num_color` methods return strings to be interpolated into other strings, but with the `mode: :set` argument, RBText will automatically print the escape code to set the color for everything printed after.
+
 To clear all colors do
 ```rb
 # Reset foreground colors
@@ -104,6 +106,7 @@ RBText::Formatting.blinking
 # Strikethrough text
 RBText::Formatting.strikethrough
 ```
+Similar to with colors, you can add `mode: :set` to any formatting function to set it.
 
 You can clear all formatting with
 ```rb
