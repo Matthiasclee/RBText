@@ -39,7 +39,7 @@ module RBText
       return bg_color_codes
     end
 
-    def color(color, type: :fg)
+    def color(color, type: :fg, mode: :str)
       return "\033[39m\033[49m" if type == :all && color == :reset
 
       if type == :fg
@@ -50,11 +50,13 @@ module RBText
         return nil
       end
 
-      return "\033[#{color_code}m"
+      return "\033[#{color_code}m" if mode == :str
+      print "\033[#{color_code}m" if mode == :set
     end
 
-    def num_color(num, type: :fg)
-      return "\033[#{type == :fg ? "38" : "48"};5;#{num}m"
+    def num_color(num, type: :fg, mode: :str)
+      return "\033[#{type == :fg ? "38" : "48"};5;#{num}m" if mode == :str
+      print "\033[#{type == :fg ? "38" : "48"};5;#{num}m" if mode == :set
     end
 
     @@methods.each do |method|
