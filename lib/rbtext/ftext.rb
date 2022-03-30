@@ -4,7 +4,7 @@ module RBText
       @original_text = str
       @text = ""
       
-      str = str.split("_")
+      str = str.gsub("_.", "\0001").gsub("._", "\0002").gsub("_", "\0000").gsub("\0001", "_.").gsub("\0002", "._").split("_").map{|x|x.gsub("\0000", "_")}
 
       for x in str do
         if x[0] == "." && x[x.length-1] == "." && x.split(":").length == 2
