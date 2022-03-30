@@ -18,7 +18,7 @@ else
     end
 
     (0..lines.length-1).each do |l|
-      txt << "_.f:reset.__.#{args[l]}._"+lines[l]
+      txt << "#{"_.f:reset._" if ARGV[1] != "--noreset"}_.#{args[l]}._"+lines[l]
     end
 
     txt = txt.join
