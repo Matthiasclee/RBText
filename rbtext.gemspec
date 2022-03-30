@@ -1,5 +1,7 @@
 require_relative "lib/rbtext.rb"
 
+exe=['ftext']
+
 Gem::Specification.new do |s|
   s.name        = 'rbtext'
   s.version     = RBText.version
@@ -13,8 +15,9 @@ Gem::Specification.new do |s|
     "lib/rbtext/cursor.rb",
     "lib/rbtext/formatting.rb",
     "lib/rbtext/ftext.rb",
-    "lib/rbtext/screen.rb",
-  ]
+    "lib/rbtext/screen.rb"
+  ] + exe.map{|i|"bin/#{i}"}
+  s.executables = exe
   s.add_runtime_dependency "io", '~> 0.0.1'
   s.require_paths = ["lib"]
   s.homepage = 'https://github.com/Matthiasclee/RBText'

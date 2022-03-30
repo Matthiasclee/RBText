@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+require_relative '../lib/rbtext.rb'
+
+if $stdin.tty? && ARGV[0]
+  txt = ARGV[0].to_s
+elsif $stdin.tty?
+  return
+else
+  if ARGV[0]
+    txt = []
+
+    args = ARGV[0].split(',')
+    lines = STDIN.each_line.to_a
+
+    if args.length < lines.length
+      x = lines.length/args.length
+      args = args * (x+1)
+    end
+
+    (0..lines.length-1).each do |l|
+      txt << "_.f:reset.__.#{args[l]}._"+lines[l]
+    end
+
+    txt = txt.join
+  else
+    txt = ARGF.readlines.join
+  end
+end
+
+print R::Ft.new(txt)
