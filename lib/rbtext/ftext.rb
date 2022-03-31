@@ -77,6 +77,14 @@ module RBText
     def [](num)
       self.to_s[num]
     end
+
+    def *(n)
+      self.to_s*n
+    end
+
+    def include?(i)
+      self.to_s.include?(i)
+    end
   end
 
   class Ft < RBText::Ftext
