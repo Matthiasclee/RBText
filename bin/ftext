@@ -1,6 +1,8 @@
 #!/usr/bin/ruby
 require_relative '../lib/rbtext.rb'
 
+params = (ARGV[1..ARGV.length-1]).to_a
+
 if $stdin.tty? && ARGV[0]
   txt = ARGV[0].to_s
 elsif $stdin.tty?
@@ -18,7 +20,7 @@ else
     end
 
     (0..lines.length-1).each do |l|
-      txt << "#{"_.f:reset._" if ARGV[1] != "--noreset"}_.#{args[l]}._"+lines[l].gsub("_", "\0004")
+      txt << "#{"_.f:reset._" if !params.include?("--noreset")}_.#{args[l]}._"+lines[l].gsub("_", "\0004")
     end
 
     txt = txt.join
