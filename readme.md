@@ -190,6 +190,19 @@ RBText::Screen.width # => 100
 RBText::Screen.height # => 50
 ```
 
+### String methods
+If you include `rbtext/string_methods`, you can use RBText formatting and colors as methods on a string.
+```rb
+require 'rbtext/string_methods' # => true
+
+"Hello World".color :blue # => "\e[34mHello World\e[39m"
+"Hello World".color :blue, type: :bg # => "\e[44mHello World\e[49m" 
+
+"Hello World".bold # => "\e[1mHello World\e[0m" 
+```
+
+You can also chain methods to make the string blue with a green background.
+
 ### Short names
 RBText has abbreviated names for modules and classes to make them cleaner.
 ```rb
