@@ -15,7 +15,8 @@ Gem::Specification.new do |s|
     "lib/rbtext/cursor.rb",
     "lib/rbtext/formatting.rb",
     "lib/rbtext/ftext.rb",
-    "lib/rbtext/screen.rb"
+    "lib/rbtext/screen.rb",
+    "lib/rbtext/string_methods.rb"
   ] + exe.map{|i|"bin/#{i}"}
   s.executables = exe
   s.add_runtime_dependency "io-console", '~> 0.5.6'
