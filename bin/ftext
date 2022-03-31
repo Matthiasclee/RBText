@@ -29,4 +29,6 @@ else
   end
 end
 
-print R::Ft.new(txt).to_s.gsub("\0004", "_")
+out = R::Ft.new(txt).to_s.gsub("\0004", "_")
+print out.dump.sub("\"", "").reverse.sub("\"", "").reverse if params.include?("--dump")
+print out if !params.include?("--dump")
