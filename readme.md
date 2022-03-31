@@ -162,6 +162,11 @@ example.rb # green
 ```
 
 By default this adds a `_.f:reset._` to the beginning of each line. This can be removed with the `--noreset` flag.
+With the `--dump` flag, ftext will return escaped escape codes that can be echoed with `echo -e` or set as a `PS1` value in bash.
+```sh
+$ ftext '_.c:green._asd' --dump 
+\e[32masd\e[0m
+```
 
 ### Screen
 There is a `RBText::Screen` module that lets you clear the screen and the current line.
