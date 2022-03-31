@@ -5,7 +5,8 @@ module RBText
       :clear_line,
       :size,
       :height,
-      :width
+      :width,
+      :bell
     ]
 
     def clear
@@ -26,6 +27,10 @@ module RBText
 
     def width
       self.size[1]
+    end
+
+    def bell
+      print "\a"
     end
 
     @@methods.each do |method|

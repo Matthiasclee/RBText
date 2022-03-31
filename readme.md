@@ -190,6 +190,8 @@ RBText::Screen.width # => 100
 RBText::Screen.height # => 50
 ```
 
+You can make a terminal bell with `RBText::Screen.bell`
+
 ### String methods
 If you include `rbtext/string_methods`, you can use RBText formatting and colors as methods on a string.
 ```rb
