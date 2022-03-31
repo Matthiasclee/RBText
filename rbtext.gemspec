@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
     "lib/rbtext/screen.rb"
   ] + exe.map{|i|"bin/#{i}"}
   s.executables = exe
-  s.add_runtime_dependency "io", '~> 0.0.1'
+  s.add_runtime_dependency "io-console", '~> 0.5.6'
   s.require_paths = ["lib"]
   s.homepage = 'https://github.com/Matthiasclee/RBText'
   s.license = 'AGPL-3.0'
