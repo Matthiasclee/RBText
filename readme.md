@@ -157,7 +157,7 @@ $ ls | ftext 'c:yellow'
 asd.txt # yellow
 example.rb # yellow
 
-$ls | ftext 'c:yellow,c:green'
+$ ls | ftext 'c:yellow,c:green'
 asd.txt # yellow
 example.rb # green
 ```
