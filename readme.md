@@ -1,5 +1,6 @@
 # RBText
 #### RBText is a gem that allows you to format, color, and manipulate terminal output.
+[![Gem Version](https://badge.fury.io/rb/rbtext.svg)](https://badge.fury.io/rb/rbtext)
 
 ## Installation
 Get it from RubyGems:
