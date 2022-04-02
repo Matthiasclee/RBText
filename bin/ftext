@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 require_relative '../lib/rbtext.rb'
 
 params = (ARGV[1..ARGV.length-1]).to_a
