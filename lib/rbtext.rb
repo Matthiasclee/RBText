@@ -11,11 +11,9 @@ module RBText
   @ver_3 = 0
   @ver_4 = ""
 
-  def version
+  def self.version
     "#{@ver_1}.#{@ver_2}.#{@ver_3}#{".#{@ver_4}" if @ver_4.length > 1}"
   end
-
-  module_function :version
 end
 
 module R

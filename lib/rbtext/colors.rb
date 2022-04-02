@@ -1,13 +1,6 @@
 module RBText
   module Colors
-    @@methods = [
-      :fg_color_codes,
-      :bg_color_codes,
-      :color,
-      :num_color
-    ]
-
-    def fg_color_codes
+    def self.fg_color_codes
       {
         black: "30",
         red: "31",
@@ -29,7 +22,7 @@ module RBText
       }
     end
 
-    def bg_color_codes
+    def self.bg_color_codes
       bg_color_codes = {}
 
       for c in self.fg_color_codes.keys do
@@ -39,7 +32,7 @@ module RBText
       return bg_color_codes
     end
 
-    def color(color, type: :fg, mode: :str)
+    def self.color(color, type: :fg, mode: :str)
       return "\033[39m\033[49m" if type == :all && color == :reset
 
       if type == :fg
@@ -54,21 +47,11 @@ module RBText
       print "\033[#{color_code}m" if mode == :set
     end
 
-    def num_color(num, type: :fg, mode: :str)
+    def self.num_color(num, type: :fg, mode: :str)
       return "\033[#{type == :fg ? "38" : "48"};5;#{num}m" if mode == :str
       print "\033[#{type == :fg ? "38" : "48"};5;#{num}m" if mode == :set
     end
-
-    @@methods.each do |method|
-      module_function method
-    end
-  end
-
-  module C
-    include RBText::Colors
-
-    @@methods.each do |method|
-      module_function method
-    end
   end
 end
+
+RBText::C = RBText::Colors
