@@ -8,7 +8,7 @@ require "io/console"
 module RBText
   @ver_1 = 0
   @ver_2 = 3
-  @ver_3 = 0
+  @ver_3 = 1
   @ver_4 = ""
 
   def self.version
