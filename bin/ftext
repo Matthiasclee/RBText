@@ -3,9 +3,9 @@ require_relative '../lib/rbtext.rb'
 
 params = (ARGV[1..ARGV.length-1]).to_a
 
-if $stdin.tty? && ARGV[0]
+if STDIN.tty? && ARGV[0]
   txt = ARGV[0].to_s
-elsif $stdin.tty?
+elsif STDIN.tty?
   return
 else
   if ARGV[0]
