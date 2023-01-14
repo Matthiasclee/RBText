@@ -5,12 +5,23 @@ require 'argparse'
 opts = {
   dump: { has_argument: false },
   noreset: { has_argument: false },
-  stdin: { has_argument: false }
+  stdin: { has_argument: false },
+  help: { has_argument: false }
 }
 
 switches = {}
 
 args = ArgsParser::Args.new(options: opts, switches: switches)
+
+if args.options[:help]
+  puts "RBtext ftext #{RBText.version}"
+  puts "Syntax: ftext [ftext] [options]"
+  puts "Options"
+  puts "--dump - Output actual escape codes"
+  puts "--noreset - Doesn't reset formatting when applying ftext to piped input"
+  puts "--stdin - Get ftext from pipe"
+  exit
+end
 
 if STDIN.tty? && ARGV[0] # If no pipe input and argument provided
   txt = ARGV[0].to_s
