@@ -26,7 +26,7 @@ else
     lines = STDIN.each_line.to_a
 
     if ftargs.length < lines.length
-      x = lines.length/args.length
+      x = lines.length/ftargs.length
       ftargs = ftargs * (x+1)
     end
 
