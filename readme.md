@@ -160,6 +160,9 @@ example.rb # yellow
 $ ls | ftext 'c:yellow,c:green'
 asd.txt # yellow
 example.rb # green
+
+$ echo "_.c:blue._Hello, World!" | ftext --stdin
+Hello, World! # blue
 ```
 
 By default this adds a `_.f:reset._` to the beginning of each line. This can be removed with the `--noreset` flag.
