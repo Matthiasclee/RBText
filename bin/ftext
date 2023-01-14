@@ -1,26 +1,37 @@
 #!/usr/bin/env ruby
 require_relative '../lib/rbtext.rb'
+require 'argparse'
 
-params = (ARGV[1..ARGV.length-1]).to_a
+opts = {
+  dump: { has_argument: false },
+  noreset: { has_argument: false },
+  stdin: { has_argument: false }
+}
 
-if STDIN.tty? && ARGV[0]
+switches = {}
+
+args = ArgsParser::Args.new(options: opts, switches: switches)
+
+if STDIN.tty? && ARGV[0] # If no pipe input and argument provided
   txt = ARGV[0].to_s
-elsif STDIN.tty?
-  return
+elsif !STDIN.tty? && args.options[:stdin] # If pipe input and no argument provided
+  ft = STDIN.gets
+  print R::Ft.new(ft)
+  exit
 else
   if ARGV[0]
     txt = []
 
-    args = ARGV[0].split(',')
+    ftargs = args.data[0].split(',')
     lines = STDIN.each_line.to_a
 
-    if args.length < lines.length
+    if ftargs.length < lines.length
       x = lines.length/args.length
-      args = args * (x+1)
+      ftargs = ftargs * (x+1)
     end
 
     (0..lines.length-1).each do |l|
-      txt << "#{"_.f:reset._" if !params.include?("--noreset")}_.#{args[l]}._"+lines[l].gsub("_", "\0004")
+      txt << "#{"_.f:reset._" if !args.options[:noreset]}_.#{ftargs[l]}._"+lines[l].gsub("_", "\0004")
     end
 
     txt = txt.join
@@ -30,5 +41,5 @@ else
 end
 
 out = R::Ft.new(txt).to_s.gsub("\0004", "_")
-print out.dump.sub("\"", "").reverse.sub("\"", "").reverse if params.include?("--dump")
-print out if !params.include?("--dump")
+print out.dump.sub("\"", "").reverse.sub("\"", "").reverse if args.options[:dump]
+print out if !args.options[:dump]
