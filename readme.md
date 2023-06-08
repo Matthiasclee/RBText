@@ -194,6 +194,12 @@ RBText::Screen.width # => 100
 RBText::Screen.height # => 50
 ```
 
+Additionally, you can read individual keypresses from `STDIN`.
+```rb
+# Read character
+RBText::Screen.getch # => :backspace
+```
+
 You can make a terminal bell with `RBText::Screen.bell`
 
 ### String methods
