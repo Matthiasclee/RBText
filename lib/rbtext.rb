@@ -4,6 +4,7 @@ require_relative "rbtext/formatting.rb"
 require_relative "rbtext/ftext.rb"
 require_relative "rbtext/screen.rb"
 require "io/console"
+require "io/wait"
 
 module RBText
   @ver_1 = 0
