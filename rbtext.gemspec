@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     "lib/rbtext/string_methods.rb"
   ] + exe.map{|i|"bin/#{i}"}
   s.executables = exe
-  s.add_runtime_dependency "io-console", '~> 0.5.6'
+  s.add_runtime_dependency "io-console", '>= 0.5.6'
   s.add_runtime_dependency "argparse", '~> 0.0.3'
   s.require_paths = ["lib"]
   s.homepage = 'https://github.com/Matthiasclee/RBText'
