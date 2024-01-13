@@ -9,7 +9,7 @@ require "io/wait"
 module RBText
   @ver_1 = 0
   @ver_2 = 3
-  @ver_3 = 3
+  @ver_3 = 4
   @ver_4 = ""
 
   def self.version
