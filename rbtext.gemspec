@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "argparse", '~> 0.0.3'
   s.require_paths = ["lib"]
   s.homepage = 'https://github.com/Matthiasclee/RBText'
-  s.license = 'AGPL-3.0'
+  s.license = 'Nonstandard'
 end
