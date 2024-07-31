@@ -198,6 +198,9 @@ Additionally, you can read individual keypresses from `STDIN`.
 ```rb
 # Read character
 RBText::Screen.getch # => :backspace
+
+# Read raw character
+RBText::Screen.getch(raw: true) # => "\u007F"
 ```
 
 You can make a terminal bell with `RBText::Screen.bell`

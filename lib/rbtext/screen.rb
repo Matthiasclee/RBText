@@ -26,14 +26,16 @@ module RBText
       print "\a"
     end
 
-    def self.getch
+    def self.getch(raw: false)
       out = STDIN.getch
 
       while STDIN.ready? do
         out << STDIN.getch
       end
 
-      return @@key_press_mappings.key(out)
+      return out if raw
+
+      return @@key_press_mappings.key(out) || out
     end
   end
 end
