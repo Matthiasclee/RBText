@@ -26,6 +26,14 @@ module RBText
       print "\a"
     end
 
+    def self.alternate_screen_mode
+      print "\e[?1049h"
+    end
+
+    def self.exit_alternate_screen_mode
+      print "\e[?1049l"
+    end
+
     def self.getch(raw: false)
       out = STDIN.getch
 

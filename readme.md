@@ -173,16 +173,16 @@ $ ftext '_.c:green._asd' --dump
 ```
 
 ### Screen
-There is a `RBText::Screen` module that lets you clear the screen and the current line.
+Clear 
 ```rb
-# Clear whole screen
+# Clear whole screen or current line
 RBText::Screen.clear
 
 # Clear current line
 RBText::Screen.clear_line
 ```
 
-You can also get the window size with `RBText::Screen`
+Get terminal size
 ```rb
 # Size
 RBText::Screen.size # => [50, 100]
@@ -194,7 +194,16 @@ RBText::Screen.width # => 100
 RBText::Screen.height # => 50
 ```
 
-Additionally, you can read individual keypresses from `STDIN`.
+Toggle alternate screen mode
+```rb
+# Enter
+RBText::Screen.alternate_screen_mode
+
+# Exit
+RBText::Screen.exit_alternate_screen_mode
+```
+
+Read individual keypresses from `STDIN`:
 ```rb
 # Read character
 RBText::Screen.getch # => :backspace
